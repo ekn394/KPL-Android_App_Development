@@ -1,0 +1,60 @@
+package com.enordquist.scorekeeper2000;
+
+/**
+ * The package name above should NOT be copied, leave the package name as it is.
+ * Copy everything below this comment.
+ */
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.TextView;
+
+/**
+ * This app displays an order form to order coffee.
+ */
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    /**
+     * This method is called when the order button is clicked.
+     */
+
+    int scoreTeamA = 0;
+
+
+    public void a_plus_1(View view) {
+        scoreTeamA = scoreTeamA + 1;
+        display(scoreTeamA);
+    }
+
+    public void a_plus_5(View view) {
+        scoreTeamA = scoreTeamA + 5;
+        display(scoreTeamA);
+    }
+
+    public void a_minus_1(View view) {
+        scoreTeamA = scoreTeamA - 1;
+        display(scoreTeamA);
+    }
+
+    public void a_minus_5(View view) {
+        scoreTeamA = scoreTeamA - 5;
+        display(scoreTeamA);
+    }
+
+    /**
+     * This method displays the given quantity value on the screen.
+     */
+    private void display(int number) {
+        TextView quantityTextView = (TextView) findViewById(R.id.team_a_score);
+        quantityTextView.setText("" + number);
+    }
+
+
+}
